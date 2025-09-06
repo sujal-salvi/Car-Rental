@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="ps.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Car Rental System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="brand">
+      <div class="logo">🚗</div>
+      <h1>RideNow</h1>
+    </div>
+
+    <nav class="nav">
+      <a href="#cars">Cars</a>
+      <a href="#how">How it works</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn ghost" href="#login">Login</a>
+      <a class="btn solid" href="#register">Sign up</a>
+    </nav>
+    <button class="hamburger" aria-label="Open Menu">☰</button>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="menu" class="drawer">
+    <a href="#" class="drawer-close">×</a>
+    <a href="#cars">Cars</a>
+    <a href="#how">How it works</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#login">Login</a>
+    <a href="#register">Sign up</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <h2>Rent the perfect car in minutes.</h2>
+      <p>Flexible pricing, real-time availability, and hassle-free pickups across your city.</p>
+      <form class="search-card" action="#" method="get">
+        <div class="field">
+          <label for="location">Pickup Location</label>
+          <input id="location" name="location" type="text" placeholder="Mumbai, Andheri West" required />
+        </div>
+        <div class="field">
+          <label for="pickup">Pickup</label>
+          <input id="pickup" name="pickup" type="datetime-local" required />
+        </div>
+        <div class="field">
+          <label for="dropoff">Drop-off</label>
+          <input id="dropoff" name="dropoff" type="datetime-local" required />
+        </div>
+        <div class="field">
+          <label for="type">Car Type</label>
+          <select id="type" name="type">
+            <option>Any</option>
+            <option>Mini Car</option>
+            <option>Sedan</option>
+            <option>SUV</option>
+            <option>Luxury</option>
+            <option>EV</option>
+          </select>
+        </div>
+        <button class="btn solid w-full">Search Cars</button>
+
+        <div class="filters">
+          <div class="chip">
+            <input id="auto" type="checkbox" />
+            <label for="auto">Automatic</label>
+          </div>
+          <div class="chip">
+            <input id="ac" type="checkbox" />
+            <label for="ac">A/C</label>
+          </div>
+          <div class="chip">
+            <input id="ev" type="checkbox" />
+            <label for="ev">Electric</label>
+          </div>
+          <div class="chip">
+            <input id="driver" type="checkbox" />
+            <label for="driver">With Driver</label>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Results -->
+  <main class="layout" id="cars">
+    <aside class="sidebar card">
+      <h3>Filter</h3>
+      <div class="filter-group">
+        <label>Price / Day</label>
+        <input type="range" min="500" max="8000" value="3500" />
+        <div class="range-info">₹500 — ₹8000</div>
+      </div>
+      <div class="filter-group">
+        <label>Fuel Type</label>
+        <div class="checks">
+          <label><input type="radio" name="fuel" checked /> Any</label>
+          <label><input type="radio" name="fuel" /> Petrol</label>
+          <label><input type="radio" name="fuel" /> Diesel</label>
+          <label><input type="radio" name="fuel" /> Electric</label>
+        </div>
+      </div>
+      <div class="filter-group">
+        <label>Seating</label>
+        <div class="tags">
+          <button class="tag">4</button>
+          <button class="tag">5</button>
+          <button class="tag">7</button>
+        </div>
+      </div>
+      <a href="#" class="btn ghost w-full">Reset</a>
+      <a href="#" class="btn solid w-full">Apply Filters</a>
+      <hr />
+      <h4>Need help?</h4>
+      <p class="muted">Chat with us or call 1800-123-RENT</p>
+    </aside>
+
+    <section class="results">
+      <!-- Car 1 -->
+      <article class="car card">
+        <div class="car-media">
+          <img alt="Sedan" src="images/Toyota Corolla 2022.jpg"/>
+          <div class="badges">
+            <span class="badge">⭐ 4.7</span>
+            <span class="badge">A/C</span>
+            <span class="badge">Automatic</span>
+          </div>
+        </div>
+        <div class="car-body">
+          <h3>Toyota Corolla 2022</h3>
+          <p class="muted">Petrol • 5 Seats • 18 km/l • 2 Bags</p>
+          <ul class="features">
+            <li>Free cancellation</li>
+            <li>Unlimited km option</li>
+            <li>24×7 roadside assistance</li>
+          </ul>
+          <div class="car-cta">
+            <div class="price"><span>₹2,499</span> / day</div>
+            <a href="#book" class="btn solid">Book Now</a>
+            <a href="#corolla" class="btn ghost">View Details</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Car 2 -->
+      <article class="car card">
+        <div class="car-media">
+          <img alt="SUV" src="images/Hyundai Creta.jpg"/>
+          <div class="badges">
+            <span class="badge">⭐ 4.8</span>
+            <span class="badge">A/C</span>
+            <span class="badge">Manual</span>
+          </div>
+        </div>
+        <div class="car-body">
+          <h3>Hyundai Creta 2023</h3>
+          <p class="muted">Diesel • 5 Seats • 16 km/l • 3 Bags</p>
+          <ul class="features">
+            <li>Insurance included</li>
+            <li>FastTag Enabled</li>
+            <li>Doorstep delivery</li>
+          </ul>
+          <div class="car-cta">
+            <div class="price"><span>₹3,299</span> / day</div>
+            <a href="#book" class="btn solid">Book Now</a>
+            <a href="#creta" class="btn ghost">View Details</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Car 3 -->
+      <article class="car card">
+        <div class="car-media">
+          <img alt="EV" src="images/Tata-Nexon-EV.jpg"/>
+          <div class="badges">
+            <span class="badge">⭐ 4.6</span>
+            <span class="badge">EV</span>
+            <span class="badge">Automatic</span>
+          </div>
+        </div>
+        <div class="car-body">
+          <h3>Tata Nexon EV</h3>
+          <p class="muted">Electric • 5 Seats • 300 km range</p>
+          <ul class="features">
+            <li>Free charging card</li>
+            <li>Eco-mode</li>
+            <li>Last-minute availability</li>
+          </ul>
+          <div class="car-cta">
+            <div class="price"><span>₹2,899</span> / day</div>
+            <a href="#book" class="btn solid">Book Now</a>
+            <a href="#nexon" class="btn ghost">View Details</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Car 4 -->
+      <article class="car card">
+        <div class="car-media">
+          <img alt="SUV" src="images/XUV 700.jpeg"/>
+          <div class="badges">
+            <span class="badge">⭐ 4.9</span>
+            <span class="badge">A/C</span>
+            <span class="badge">Automatic</span>
+          </div>
+        </div>
+        <div class="car-body">
+          <h3>Mahindra XUV700</h3>
+          <p class="muted">Petrol • 7 Seats • 15 km/l • 4 Bags</p>
+          <ul class="features">
+            <li>Panoramic sunroof</li>
+            <li>Advanced safety features</li>
+            <li>Doorstep delivery</li>
+          </ul>
+          <div class="car-cta">
+            <div class="price"><span>₹3,899</span> / day</div>
+            <a href="#book" class="btn solid">Book Now</a>
+            <a href="#xuv700" class="btn ghost">View Details</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Car 5 -->
+      <article class="car card">
+        <div class="car-media">
+          <img alt="Luxury" src="images/BMW 500.jpg"/>
+          <div class="badges">
+            <span class="badge">⭐ 4.9</span>
+            <span class="badge">Luxury</span>
+            <span class="badge">Automatic</span>
+          </div>
+        </div>
+        <div class="car-body">
+          <h3>BMW 5 Series</h3>
+          <p class="muted">Petrol • 5 Seats • 12 km/l • 3 Bags</p>
+          <ul class="features">
+            <li>Premium leather seats</li>
+            <li>Onboard navigation</li>
+            <li>24×7 concierge service</li>
+          </ul>
+          <div class="car-cta">
+            <div class="price"><span>₹7,499</span> / day</div>
+            <a href="#book" class="btn solid">Book Now</a>
+            <a href="#bmw5" class="btn ghost">View Details</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Car 6 -->
+      <article class="car card">
+        <div class="car-media">
+          <img alt="Mini Car" src="images/MARUTI BALENO.png"/>
+          <div class="badges">
+            <span class="badge">⭐ 4.5</span>
+            <span class="badge">Manual</span>
+            <span class="badge">A/C</span>
+          </div>
+        </div>
+        <div class="car-body">
+          <h3>Maruti Baleno</h3>
+          <p class="muted">Petrol • 5 Seats • 22 km/l • 2 Bags</p>
+          <ul class="features">
+            <li>Best for city rides</li>
+            <li>Highly fuel efficient</li>
+            <li>Affordable pricing</li>
+          </ul>
+          <div class="car-cta">
+            <div class="price"><span>₹1,899</span> / day</div>
+            <a href="#book" class="btn solid">Book Now</a>
+            <a href="#baleno" class="btn ghost">View Details</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- How it works -->
+  <section class="how" id="how">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step card">
+        <div class="step-id">1</div>
+        <h3>Search</h3>
+        <p>Choose your location, dates and filters to see live availability.</p>
+      </div>
+      <div class="step card">
+        <div class="step-id">2</div>
+        <h3>Select</h3>
+        <p>Compare specs, ratings, and pricing to pick the perfect ride.</p>
+      </div>
+      <div class="step card">
+        <div class="step-id">3</div>
+        <h3>Book</h3>
+        <p>Complete booking with UPI/cards. Get instant confirmation.</p>
+      </div>
+      <div class="step card">
+        <div class="step-id">4</div>
+        <h3>Pickup & Go</h3>
+        <p>Pickup at your chosen hub or doorstep delivery. Enjoy the drive!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <h2>Simple, transparent pricing</h2>
+    <div class="price-grid">
+      <div class="pplan card">
+        <h3>Hourly</h3>
+        <div class="pp rice">From ₹299/hr</div>
+        <ul>
+          <li>Best for short trips</li>
+          <li>Unlimited kms add-on</li>
+          <li>Basic insurance</li>
+        </ul>
+        <a href="#book" class="btn solid w-full">Choose Hourly</a>
+      </div>
+      <div class="pplan card highlight">
+        <h3>Daily</h3>
+        <div class="pp rice">From ₹2,199/day</div>
+        <ul>
+          <li>Most popular</li>
+          <li>Doorstep delivery</li>
+          <li>Premium insurance</li>
+        </ul>
+        <a href="#book" class="btn solid w-full">Choose Daily</a>
+      </div>
+      <div class="pplan card">
+        <h3>Monthly</h3>
+        <div class="pp rice">From ₹39,999/mo</div>
+        <ul>
+          <li>Long-term rentals</li>
+          <li>Maintenance included</li>
+          <li>Loyalty rewards</li>
+        </ul>
+        <a href="#book" class="btn solid w-full">Choose Monthly</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="reviews" id="reviews">
+    <h2>Loved by drivers</h2>
+    <div class="review-grid">
+      <blockquote class="card">
+        <p>“Super smooth booking and a spotless car. Perfect weekend getaway!”</p>
+        <footer>— Aisha P.</footer>
+      </blockquote>
+      <blockquote class="card">
+        <p>“The EV option was amazing. Free charging card saved us money.”</p>
+        <footer>— Rohan K.</footer>
+      </blockquote>
+      <blockquote class="card">
+        <p>“Delivery to my home within 30 minutes. Highly recommend!”</p>
+        <footer>— Meera S.</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <h2>Frequently asked questions</h2>
+    <details class="card">
+      <summary>What documents are required?</summary>
+      <p>Valid driving license, government ID, and a working phone number.</p>
+    </details>
+    <details class="card">
+      <summary>What about deposits?</summary>
+      <p>Refundable security deposit varies by car type and duration.</p>
+    </details>
+    <details class="card">
+      <summary>Do you offer with-driver rentals?</summary>
+      <p>Yes, select “With Driver” in filters during search.</p>
+    </details>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="cols">
+      <div>
+        <h3>RideNow</h3>
+        <p class="muted">Smart, safe, and affordable car rentals across India.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Careers</a>
+        <a href="#">Blog</a>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <a href="#">Help Center</a>
+        <a href="#">Contact</a>
+        <a href="#">Terms & Privacy</a>
+      </div>
+      <div>
+        <h4>Admin</h4>
+        <a class="btn ghost small" href="#admin">Go to Dashboard</a>
+      </div>
+    </div>
+    <p class="copyright">© 2025 RideNow. All rights reserved.</p>
+  </footer>
+
+  <!-- Auth + Booking + Admin modals (same as before) -->
+   <!-- Auth Modals (CSS-only via :target) -->
+  <div id="login" class="modal">
+    <a href="#" class="modal-bg" aria-label="Close"></a>
+    <div class="modal-card">
+      <h3>Login</h3>
+      <form class="form">
+        <label>Email or Phone</label>
+        <input type="text" placeholder="you@example.com" required />
+        <label>Password</label>
+        <input type="password" placeholder="••••••••" required />
+        <button class="btn solid w-full">Login</button>
+        <p class="muted center">New here? <a href="#register">Create account</a></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="register" class="modal">
+    <a href="#" class="modal-bg" aria-label="Close"></a>
+    <div class="modal-card">
+      <h3>Create your account</h3>
+      <form class="form">
+        <label>Full Name</label>
+        <input type="text" placeholder="Sujal Salvi" required />
+        <label>Email</label>
+        <input type="email" placeholder="you@example.com" required />
+        <label>Phone</label>
+        <input type="tel" placeholder="+91 98xxxxxx" required />
+        <label>Driving License (ID)</label>
+        <input type="text" placeholder="MH-xx-xxxxxxx" required />
+        <label>Password</label>
+        <input type="password" placeholder="••••••••" required />
+        <button class="btn solid w-full">Create Account</button>
+        <p class="muted center">Already have an account? <a href="#login">Login</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Booking Modal -->
+  <div id="book" class="modal">
+    <a href="#" class="modal-bg" aria-label="Close"></a>
+    <div class="modal-card">
+      <h3>Complete your booking</h3>
+      <form class="form">
+        <div class="grid-2">
+          <div>
+            <label>Pickup Date & Time</label>
+            <input type="datetime-local" required />
+          </div>
+          <div>
+            <label>Drop-off Date & Time</label>
+            <input type="datetime-local" required />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <label>Pickup Location</label>
+            <input type="text" placeholder="Andheri West Hub" required />
+          </div>
+          <div>
+            <label>Drop-off Location</label>
+            <input type="text" placeholder="Same as pickup" required />
+          </div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <label>Add-ons</label>
+            <div class="checks">
+              <label><input type="checkbox" /> Unlimited KMs</label>
+              <label><input type="checkbox" /> Child Seat</label>
+              <label><input type="checkbox" /> Extra Driver</label>
+            </div>
+          </div>
+          
+        </div>
+        <div class="summary">
+          <div>Base Fare</div><div>₹2,499</div>
+          <div>Taxes & Fees</div><div>₹225</div>
+          <div class="total">Estimated Total</div><div class="total">₹2,724</div>
+        </div>
+        <button class="btn solid w-full">Proceed to Payment</button>
+        <p class="muted center">We accept UPI, cards, netbanking & wallets.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Dashboard Preview (static) -->
+  <div id="admin" class="modal">
+    <a href="#" class="modal-bg" aria-label="Close"></a>
+    <div class="modal-card admin-card">
+      <h3>Admin Dashboard (Preview)</h3>
+      <div class="admin-grid">
+        <div class="stat card"><h4>Total Cars</h4><p>124</p></div>
+        <div class="stat card"><h4>Active Bookings</h4><p>58</p></div>
+        <div class="stat card"><h4>Revenue (Mtd)</h4><p>₹12.4L</p></div>
+        <div class="stat card"><h4>New Users</h4><p>312</p></div>
+      </div>
+      <div class="table card">
+        <div class="table-head">
+          <span>Booking ID</span><span>User</span><span>Car</span><span>Status</span><span>Amount</span>
+        </div>
+        <div class="table-row"><span>#B1024</span><span>Aisha P</span><span>Corolla</span><span class="pill success">Confirmed</span><span>₹3,199</span></div>
+        <div class="table-row"><span>#B1025</span><span>Rohan K</span><span>Creta</span><span class="pill warn">Pending</span><span>₹4,899</span></div>
+        <div class="table-row"><span>#B1026</span><span>Meera S</span><span>Nexon EV</span><span class="pill danger">Refund</span><span>₹2,499</span></div>
+      </div>
+      <a class="btn ghost w-full" href="#">Go to full dashboard</a>
+    </div>
+  </div>
+  <!-- (keep your existing modal code here) -->
+
+  <a class="mobile-open" href="#menu"></a>
+</body>
+</html>
